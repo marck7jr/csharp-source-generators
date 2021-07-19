@@ -6,6 +6,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Remove="BrasilianTourismMapEntry.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="BrasilianTourismMapEntry.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 

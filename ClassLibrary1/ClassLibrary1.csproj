@@ -6,11 +6,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Humanizer.Core" Version="2.11.10" GeneratePathProperty="true" />
 		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.10.0" />
 	</ItemGroup>
+
+	<PropertyGroup>
+		<GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+	</PropertyGroup>
+
+	<Target Name="GetDependencyTargetPaths">
+		<ItemGroup>
+			<TargetPathWithTargetPlatformMoniker Include="$(PKGHumanizer_Core)\lib\netstandard2.0\Humanizer.dll" IncludeRuntimeDependency="false" />
+		</ItemGroup>
+	</Target>
 
 </Project>
